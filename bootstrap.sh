@@ -57,3 +57,23 @@ popd
 # Install required python packages.
 easy_install pip
 pip install -r /vagrant/requirements.txt
+
+# Install requirements for Yash
+sudo apt-get install -y swig python-pip python-qt4 python-qt4-dev python-qt4-gl
+sudo apt-add-repository -y ppa:dartsim/ppa
+sudo apt-get update -y
+sudo apt-add-repository -y ppa:libccd-debs
+sudo apt-add-repository -y ppa:fcl-debs
+sudo apt-add-repository -y ppa:dartsim
+sudo apt-get update -y
+
+
+sudo apt-get install -y libdart6-dev
+sudo apt-get install -y libdart6-all-dev
+sudo pip install pydart2
+
+
+sudo pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+sudo pip install -r /vagrant/yash-requirements.txt
